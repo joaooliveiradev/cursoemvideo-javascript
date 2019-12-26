@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+        <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Verificador de Idade</title>
+    <style>
+        body{
+            background-color: deepskyblue;
+        }
+        h1{
+            text-align: center;
+            font: normal 30px Arial;
+        }
+        .ano{
+            font-size: 23px;
+            padding-right: 10px;
+        }
+       .sexo{
+           padding: 0;
+           font-size: 23px;
+       }
+       .sexomasculino{
+           padding-left: 6px;
+           font-size: 19px;
+       }
+       .sexofeminino{
+           padding-left: 6px;
+           font-size: 19px;
+       }
+        .painel{
+            width: 50%;
+            height: 440px;
+            background: white;
+            margin: 2% 25%;
+            border-radius: 10px;
+            padding-top: 28px;
+            padding-left: 23px;
+        }  
+        .image{
+            width: 40%;
+            height: 260px;
+            border-radius: 50%;
+          
+            margin-top: 2%;
+            margin-left: 30%;
+        }
+        .image img{
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 260px;
+            background-position: center;
+            border-radius: 50%;
+            display: none;
+        }
+        .botao{
+            margin-top: 2%;
+            display: block;
+        }
+        .resultado{
+            display: block;
+            text-align: center;
+            font: normal 20pt Arial;
+        }
+    </style>
+</head>
+<body>
+        <h1>Verificador de Idade</h1>
+        <div class="painel">
+           <span class="ano">Ano de Nascimento: </span><input type="text" name="anoNascimento" id="ano">
+           <br/>
+           <br/>
+           <span class="sexo">Sexo: </span>
+           <input type="radio" value="Homem" name="sexo" id=""><span class="sexomasculino">Masculino</span>
+           <input type="radio" value="Mulher" name="sexo" id=""><span class="sexofeminino">Feminino</span>
+           <br/>
+           <input class="botao" type="button" id="verificar" value="Verificar">
+           <span class="resultado"></span>
+            <div class="image">
+                    <img id="img" src="" alt="">
+            </div>
+        </div>
+    
+        <script>
+
+        document.querySelector('input#verificar').addEventListener('click',verificar);
+
+        function verificar(){
+            let data = new Date();
+            let anoAtual = data.getFullYear();
+            let anoDeNascimento = anoAtual - Number(document.querySelector('input#ano').value);
+            
+            let sexo = document.querySelector('input[name="sexo"]:checked').value;
+          
+            if(anoDeNascimento <= 10 && sexo === 'Homem'){
+                document.querySelector('span.resultado').innerHTML = 'Detectamos '+sexo+' com '+anoDeNascimento+' anos';
+                document.querySelector('img#img').style.display = 'block';
+                document.querySelector('img#img').src = 'homem10.jpg';
+            } else if (anoDeNascimento <= 25 && sexo === 'Homem') {
+                document.querySelector('span.resultado').innerHTML = 'Detectamos '+sexo+' com '+anoDeNascimento+' anos';
+                document.querySelector('img#img').style.display = 'block';
+                document.querySelector('img#img').src = 'homem20.jpg';
+            } else if (anoDeNascimento <= 40 && sexo === 'Homem'){
+                document.querySelector('span.resultado').innerHTML = 'Detectamos '+sexo+' com '+anoDeNascimento+' anos';
+                document.querySelector('img#img').style.display = 'block';
+                document.querySelector('img#img').src = 'homem40.jpg';
+            } else if (anoDeNascimento <= 80 && sexo === 'Homem'){
+                document.querySelector('span.resultado').innerHTML = 'Detectamos '+sexo+' com '+anoDeNascimento+' anos';
+                document.querySelector('img#img').style.display = 'block';
+                document.querySelector('img#img').src = 'homem60.jpg';
+            } else if (anoDeNascimento <= 10 && sexo === 'Mulher'){
+                document.querySelector('span.resultado').innerHTML = 'Detectamos '+sexo+' com '+anoDeNascimento+' anos';
+                document.querySelector('img#img').style.display = 'block';
+                document.querySelector('img#img').src = 'mulher10.jpg';
+            } else if (anoDeNascimento <= 25 && sexo === 'Mulher'){
+                document.querySelector('span.resultado').innerHTML = 'Detectamos '+sexo+' com '+anoDeNascimento+' anos';
+                document.querySelector('img#img').style.display = 'block';
+                document.querySelector('img#img').src = 'mulher20.jpg';
+            } else if (anoDeNascimento <= 40 && sexo === 'Mulher'){
+                document.querySelector('span.resultado').innerHTML = 'Detectamos '+sexo+' com '+anoDeNascimento+' anos';
+                document.querySelector('img#img').style.display = 'block';
+                document.querySelector('img#img').src = 'mulher40.jpg';
+            } else if (anoDeNascimento <= 80 && sexo === 'Mulher'){
+                document.querySelector('span.resultado').innerHTML = 'Detectamos '+sexo+' com '+anoDeNascimento+' anos';
+                document.querySelector('img#img').style.display = 'block';
+                document.querySelector('img#img').src = 'mulher60.jpg';
+            } else if (anoDeNascimento == 0 || Number(document.querySelector('input#ano').value > anoAtual))fer{
+                alert('[ERRO] Cheque os dados e tente novamente!');
+            }
+        }
+        </script>
+</body>
+</html>
+</body>
+</html>

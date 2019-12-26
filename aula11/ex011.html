@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <h1 style="display: inline;">Digite onde você vive: </h1><input type="text" name="" id="txtPais">
+    <input type="button" value="Verificar" id="buttonVerifica">
+    <div id="res">
+
+    </div>
+    <script>
+        document.querySelector('input#buttonVerifica').addEventListener('click',verificar);
+        function verificar(){
+            
+            let pais = document.querySelector('input#txtPais').value;
+            let res = document.querySelector('div#res');
+
+            if(pais != 'Brasil'){
+                res.innerHTML = 'Você é estrangeiro!'
+            } else {
+                res.innerHTML = 'Você é brasileiro!'
+            }
+        }
+    </script>
+
+</body>
+</html>

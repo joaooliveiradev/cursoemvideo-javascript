@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hora do Dia</title>
+    <style>
+        body{
+            background: dodgerblue;
+        }
+        h1{
+            text-align: center;
+            font: normal 30px Arial;
+        }
+        .painel{
+            width:50%;
+            height: auto;
+            background: white;
+            margin: 3% 25%;
+            border-radius: 10px;
+        }
+        h1{
+            color: white;
+            font: normal 30pt Arial;
+        }
+        .inicio{
+            display: inline-block;
+            margin-top: 50px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: 23px;
+            font-style: Arial;
+        }
+        .fim{
+            display: inline-block;
+            margin-top: 40px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: 23px;
+            font-style: Arial;
+        }
+        .passo{
+            display: inline-block;
+            margin-top: 40px;
+            padding-left: 15px;
+            padding-right: 15px;
+            font-size: 23px;
+            font-style: Arial;
+        }
+        #buttonContar{
+            display: block;
+            margin-left: 15px;
+            margin-top: 30px;
+        }
+        .contador{
+            display: block;
+            margin-top: 15px;
+            margin-left: 15px;
+            font-size: 23px;
+            padding-bottom: 5px;
+        }
+        #res{
+            display: block;
+            margin-left: 15px;
+            margin-top: 6px;
+            font-size: 24px;
+        }
+
+    </style>
+</head>
+<body>
+        <h1>Vamos contar</h1>
+        <div class="painel">
+            <span class="inicio">Início: </span><input type="number" name="" id="numInicio">
+            <br/>
+            <span class="fim">Fim: </span><input type="number" name="" id="numFim">
+            <br/>
+            <span class="passo">Passo:</span><input type="number" name="" id="numPasso">
+            <br/>
+            <input type="button" value="Contar" id="buttonContar">
+            <span class="contador">Contando: </span>
+            <div id="res"></div>
+            
+        </div>
+        <script>
+            document.querySelector('input#buttonContar').addEventListener('click', contar);
+            function contar(){
+            let inicio = Number(document.querySelector('input#numInicio').value);
+            let fim = Number(document.querySelector('input#numFim').value);
+            let passo = Number(document.querySelector('input#numPasso').value);
+
+            document.querySelector('div#res').innerHTML = "";
+            if(inicio !=0){
+                if(passo !=0){
+                    if(inicio < fim){
+
+                    for(let i = inicio; i < fim; i+=passo){
+                    document.querySelector('div#res').innerHTML += i+" "+" &#128073";
+                
+                }
+                document.querySelector('div#res').innerHTML += "&#127937;";
+            } else {
+                for(let i = inicio; i >= fim; i-=passo){
+                    document.querySelector('div#res').innerHTML += i+" "+" &#128073";
+                
+                }
+                document.querySelector('div#res').innerHTML += "&#127937;";
+            }
+             } else {
+                 alert('Passo inválido, considerando passo 1');
+                 passo = 1;
+                 for(let i = inicio; i < fim; i+=passo){
+                    document.querySelector('div#res').innerHTML += i+" "+" &#128073";
+                
+                }
+                document.querySelector('div#res').innerHTML += "&#127937;";
+             }
+                
+
+            } else {
+                document.querySelector('div#res').innerHTML = "Impossivel contar!";
+            }
+            
+        }
+        </script>
+</body>
+</html>

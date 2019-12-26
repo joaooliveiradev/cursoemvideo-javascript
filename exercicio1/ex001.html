@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hora do Dia</title>
+    <style>
+        body{
+            background: red;
+        }
+        h1{
+            text-align: center;
+            font: normal 30px Arial;
+        }
+        .painel{
+            width:50%;
+            height: 400px;
+            background: white;
+            margin: 3% 25%;
+            border-radius: 10px;
+        }
+        p{
+            display: block;
+            font: normal 20pt Arial;
+            text-align: center;
+            padding-top: 40px
+        }
+        .image{
+            width: 40%;
+            height: 260px;
+            border-radius: 50%;
+            
+            margin-left: 31%
+        }
+        .image img{
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+            height: 260px;
+            background-position: center;
+            border-radius: 50%;
+        }
+    </style>
+</head>
+<body>
+        <h1>Hora do Dia</h1>
+        <div class="painel">
+            <p class="hora">Agora são 12 horas</p>
+            <div class="image">
+                <img id="img" src="manha.jpg" alt="">
+            </div>
+        </div>
+    
+        <script>
+            
+            let agora = new Date();
+
+            let horas = agora.getHours();
+
+            document.querySelector('p.hora').innerHTML = 'Agora são '+horas+' horas';
+
+            if(horas <=12){
+                document.querySelector('img#img').src = 'manha.jpg';
+                document.body.style.background = '#f5c842';
+            } else if (horas <= 18){
+                document.querySelector('img#img').src = 'tarde.jpg';
+                document.body.style.background = '#d6842d';
+            } else {
+                document.querySelector('img#img').src = 'noite.jpg';
+                document.body.style.background = '#4a5152'
+            }
+        </script>
+</body>
+</html>

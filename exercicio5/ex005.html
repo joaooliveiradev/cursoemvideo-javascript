@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body{
+            background-color: #3e84d2;
+        }
+        h1{
+            color: white;
+            text-align: center;
+            font: normal 30pt Arial;
+            font-weight: 700;
+        }
+        .painel{
+            width: 60%;
+            height: 300px;
+            position: relative;
+            border-radius: 10px;
+            background-color: white;
+            transform: translateX(-50%);
+            left: 50%;
+            float: left;
+        }
+        .titulo{
+            font-size: 23px;
+            padding-top: 9px;
+            padding-left: 20px;
+            padding-right: 5px;
+            float: left;
+
+        }
+        .num{
+            margin-right: 5px;
+            display: block;
+            margin-top: 9px;
+            float: left;
+        }
+        input{
+            float: left;
+            margin-top: 9px;
+        }
+        select{
+            float: left;
+            margin-left: 20px;
+            font-size: 12px;
+            width: 150px;
+            margin-top: 20px;
+        }
+        #finalizar{
+            display: block;
+            float: left;
+            position: relative;
+            top: 145px;
+            right: 150px;
+        }
+
+    
+    </style>
+</head>
+<body>
+    <h1>Analisador de Números</h1>
+    <div class="painel">
+        <span class="titulo">Numero(Entre 1 e 100)</span><input type="number" class="num" id="inputNum"><input type="button" id="adicionar" value="Adicionar">
+        <br>
+        <br>
+
+        <select size="10" id="select" >
+            
+        </select>
+        <br>
+        <input type="button" value="Finalizar" id="finalizar">
+        <div style="text-align: center;
+
+        text-style: justify;
+        
+        font: 19pt Arial;" id="res">
+
+        </div>
+    </div>
+
+    <script src="js.js">
+    </script>
+
+</body>
+</html>

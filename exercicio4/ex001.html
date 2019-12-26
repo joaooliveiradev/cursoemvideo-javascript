@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Hora do Dia</title>
+    <style>
+        body{
+            background: dodgerblue;
+        }
+        h1{
+            text-align: center;
+            font: normal 30px Arial;
+        }
+        .painel{
+            width:50%;
+            height: 400px;
+            background: white;
+            margin: 3% 25%;
+            border-radius: 10px;
+        }
+        .numero{
+            display: inline-block;
+            padding-left: 30px;
+            padding-top: 30px;
+            font-size: 25px;
+        }
+       
+
+    </style>
+</head>
+<body>
+        <h1>Tabuada</h1>
+        <div class="painel">
+           <span class="numero">Número: </span> <input type="number" id="inputNum">
+            <input type="button" value="Gerar Tabuada" id="inputGerar">
+            <br></br>
+            <select size="10" aria-readonly="true" style="display: none; margin-left: 30px; font-size: 21px;" id="select">
+                
+            </select>
+        </div>
+        <script>
+            document.querySelector('input#inputGerar').addEventListener('click', gerar);
+            function gerar(){
+                let num = document.querySelector('input#inputNum').value;
+                let select = document.querySelector('select#select');
+                select.innerHTML = "";
+                select.style.display = 'block';
+                if(num){
+                    for(i = 0; i < 10; i++){
+                        let option = document.createElement("option");
+                        option.text = num+" x "+i+" = "+i*num;
+                        select.add(option);
+                    }
+            } else {
+                select.style.display = 'none';
+                alert('CAMPO VAZIO ou inválido, digite um número');  
+            }
+        }
+
+        </script>
+</body>
+</html>
